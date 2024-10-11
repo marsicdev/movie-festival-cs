@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieFestival
 {
-	internal class Movie
+	public class Movie
 	{
 		public int Length { get; set; }
 		public string Genre { get; set; }
@@ -21,7 +21,7 @@ namespace MovieFestival
 
 		public string GetData()
 		{
-			string movie = $"{Title} - {Length} minutes - {Genre}";
+			string movie = $"{Title}, {Length}min, {Genre[0]}{char.ToUpper(Genre[Genre.Length - 1])}";
 			return movie;
 		}
 	}

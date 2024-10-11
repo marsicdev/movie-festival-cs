@@ -9,19 +9,23 @@ namespace MovieFestival
 	public class Movie
 	{
 		public int Length { get; set; }
-		public string Genre { get; set; }
+		public Genre Genre { get; set; }
 		public string Title { get; set; }
+		public string Director { get; set; }
+		public int ReleaseYear { get; set; }
 
-		public Movie(int length, string genre, string title)
+		public Movie(int length, Genre genre, string title, int releaseYear, string director)
 		{
 			Length = length;
 			Genre = genre;
 			Title = title;
+			ReleaseYear = releaseYear;
+			Director = director;
 		}
 
 		public string GetData()
 		{
-			string movie = $"{Title}, {Length}min, {Genre[0]}{char.ToUpper(Genre[Genre.Length - 1])}";
+			string movie = $"{Title}, {Length}min, {Genre.GetData()}, {ReleaseYear}, Directed by {Director}";
 			return movie;
 		}
 	}

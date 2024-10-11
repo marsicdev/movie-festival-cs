@@ -22,7 +22,7 @@
 
 		public string GetData()
 		{
-			return $"{Date}, {Movies.Sum(movie => movie.Length)}, {Movies.Count}";
+			return $"{Date}, {Movies.Sum(movie => movie.Length)}, {Movies.Count} movies";
 		}
 	}
 }

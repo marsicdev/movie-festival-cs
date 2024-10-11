@@ -22,18 +22,7 @@
 
 		public string GetData()
 		{
-			string data = string.Empty;
-
-			if (Date != string.Empty)
-				data = $"Total duration: {Date}\n";
-
-			if (Movies != null)
-			{
-				foreach (var movie in Movies)
-					data += $"{movie.GetData()}\n";
-			}
-
-			return data;
+			return $"{Date}, {Movies.Sum(movie => movie.Length)}, {Movies.Count}";
 		}
 	}
 }

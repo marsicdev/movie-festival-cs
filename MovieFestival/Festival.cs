@@ -5,7 +5,7 @@
 		#region Properties
 
 		public string Name { get; set; }
-		public List<string> Programs { get; set; } = new List<string>();
+		public List<Program> Programs { get; set; } = new List<Program>();
 
 		#endregion
 
@@ -16,7 +16,7 @@
 			Name = name;
 		}
 
-		public Festival(string name, List<string> programs) : this(name)
+		public Festival(string name, List<Program> programs) : this(name)
 		{
 			Programs = programs;	
 		}
@@ -25,30 +25,28 @@
 
 		#region Public Methods
 
-		public void AddProgram(string program)
+		public void AddProgram(Program program)
 		{
 			Programs.Add(program);
 		}
 
 		public string GetData()
 		{
-			string result = "Festival name: " + Name + "\n" + "Total number of movies: " + GetTotalNumberOfMovies();
+			string result = "Festival name: " + Name + "\n";
 
-			int counter = 1;
+			int programCounter = 1;
+			int moviesCounter = 0;
 
-			foreach (string program in Programs)
-				result += "Program " + counter + ": " + program + "\n";
+			foreach (Program program in Programs)
+			{
+				result += "Program " + programCounter + ": " + program.GetData() + "\n";
+				programCounter++;
+				moviesCounter += program.Movies.Count;
+			}
+
+			result += "Total number of movies: " + moviesCounter;
 
 			return result;
-		}
-
-		#endregion
-
-		#region Private Methods
-
-		private int GetTotalNumberOfMovies()
-		{
-			return 0;
 		}
 
 		#endregion

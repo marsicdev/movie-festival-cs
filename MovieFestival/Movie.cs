@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace MovieFestival
 {
-	public class Movie
-	{
-		public int Length { get; set; }
-		public string Genre { get; set; }
-		public string Title { get; set; }
+    public class Movie
+    {
+        public int Length { get; set; }
+        public Genre Genre { get; set; }
+        public string Title { get; set; }
+        public int ReleaseYear { get; set; }
 
-		public Movie(int length, string genre, string title)
-		{
-			Length = length;
-			Genre = genre;
-			Title = title;
-		}
+        public Movie(int length, Genre genre, string title, int releaseYear)
+        {
+            Length = length;
+            Genre = genre;
+            Title = title;
+            ReleaseYear = releaseYear;
+        }
 
-		public string GetData()
-		{
-			string movie = $"{Title}, {Length}min, {Genre[0]}{char.ToUpper(Genre[Genre.Length - 1])}";
-			return movie;
-		}
-	}
+        public string GetData()
+        {
+            return $"{Title}, {Length}min, {Genre.GetData()}, {ReleaseYear}";
+        }
+    }
 }

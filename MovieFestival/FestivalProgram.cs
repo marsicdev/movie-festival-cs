@@ -27,12 +27,13 @@
 			if (Date != string.Empty)
 				data = $"Total duration: {Date}\n";
 
-			if(Movies != null)
+			if (Movies != null)
 			{
 				foreach (string movie in Movies)
 					data += $"{movie}\n";
 			}
 
 			return data;
+		}
 	}
 }

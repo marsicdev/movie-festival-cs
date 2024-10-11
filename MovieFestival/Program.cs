@@ -35,5 +35,15 @@
 
 			return data;
 		}
-	}
+
+        public Program CreateProgram()
+        {
+            Console.WriteLine("Date: ");
+            string MyDate = Console.ReadLine();
+            Program MyProgram = new Program();
+			MyProgram.Date = MyDate;
+
+			return MyProgram;
+        }
+    }
 }

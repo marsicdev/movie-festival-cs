@@ -1,6 +1,4 @@
-Moj prvi repositori
+notes
+=====
 
-test
-
-
-moj drugi commit
+This module was written while sitting high above the ground in a tree.

@@ -1,21 +1,21 @@
 ﻿namespace MovieFestival
 {
-	public class FestivalProgram
+	public class Program
 	{
 		public string Date { get; set; }
 
-		public List<string> Movies { get; set; }
+		public List<Movie> Movies { get; set; }
 
-		public FestivalProgram() 
+		public Program() 
 		{ 
-			Movies = new List<string>();
+			Movies = new List<Movie>();
 			Date = string.Empty;
 		}
 
-		public void AddMovie(string movie)
+		public void AddMovie(Movie movie)
 		{
 			if (Movies == null)
-				Movies = new List<string>(); 
+				Movies = new List<Movie>(); 
 				
 			Movies.Add(movie);
 		}
@@ -29,8 +29,8 @@
 
 			if (Movies != null)
 			{
-				foreach (string movie in Movies)
-					data += $"{movie}\n";
+				foreach (var movie in Movies)
+					data += $"{movie.GetData()}\n";
 			}
 
 			return data;
